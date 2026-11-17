@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { addUser } from "../redux/userSlice";
 
 const Login = () => {
@@ -32,6 +32,12 @@ const Login = () => {
       <div className="card bg-base-300 w-96 shadow-sm">
         <div className="card-body">
           <h2 className="card-title justify-center">Login</h2>
+          <p className="text-center">
+            New User?{" "}
+            <Link to="/signup" className="text-blue-500">
+              Sign up
+            </Link>
+          </p>
           <div>
             <fieldset className="fieldset">
               <label className="label" htmlFor="email">
@@ -58,6 +64,7 @@ const Login = () => {
               />
             </fieldset>
           </div>
+
           <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary" onClick={handleLogin}>
