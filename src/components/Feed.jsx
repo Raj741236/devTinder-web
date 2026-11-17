@@ -25,6 +25,10 @@ const Feed = () => {
       getFeed();
     }
   }, []);
+  if (!feedData) return;
+  if (feedData.length <= 0) {
+    return <h1>No users available</h1>;
+  }
 
   return feedData ? (
     <div>
