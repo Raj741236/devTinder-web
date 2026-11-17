@@ -23,6 +23,11 @@ const Connections = () => {
       handleConnections();
     }
   }, []);
+  if (connections && connections.length === 0) {
+    return (
+      <h1 className="text-3xl font-bold text-center">No connections found</h1>
+    );
+  }
   return (
     connections && (
       <div>
